@@ -4,8 +4,23 @@
     <meta charset="UTF-8" />
     <title>Enks Portofolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <nav class="navbar">
+      <div class="container navbar-content">
+        <h3 class="logo">Enks</h3>
+
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
     <section class="hero">
       <div class="container hero-content">
         <h1>Building Modern Websites for Growing Businesses</h1>
@@ -13,7 +28,17 @@
           I help businesses create clean, responsive, and high-converting
           landing pages.
         </p>
-        <a href="#contact" class="btn">Work With Me</a>
+        <div class="hero-button">
+          <a href="#contact" class="btn">Work With Me</a>
+          <a href="#projects" class="btn-outline">View Projects</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+          alt="Coding WorkSpace"
+        />
       </div>
     </section>
 
@@ -25,19 +50,85 @@
       </p>
     </section>
 
-    <section class="projects">
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2>My skills</h2>
+
+        <div class="skills-grid">
+          <div class="skills-card">
+            <h3>Frotend</h3>
+            <p>HTML, CSS, JavaScript</p>
+          </div>
+
+          <div class="skills-card">
+            <h3>Tools</h3>
+            <p>Git, Github, Responsive Desgin</p>
+          </div>
+
+          <div class="skills-card">
+            <h3>Focus</h3>
+            <p>Modern Landing Pages & Business Websites</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
       <div class="container">
         <h2>My Projects</h2>
-        <div class="project-card">
-          <h3>Business Landing Page</h3>
-          <p>A clean and modern landing page designed for small businesses.</p>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img
+              src="https://images.unsplash.com/photo-1467232004584-a241de8b8c5a"
+              alt="projects"
+            />
+            <h3>Business Landing Page</h3>
+            <p>
+              A clean and modern landing page designed for small businesses.
+            </p>
+          </div>
+
+          <div class="project-card">
+            <h3>Cleaning Service Website</h3>
+            <p>
+              Professional landing page designed for service-based businesses.
+            </p>
+          </div>
+
+          <div class="project-card">
+            <h3>Agency Landing Page</h3>
+            <p>A modern layout for digital agencies and startups.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p>Email: your@email.com</p>
+      <div class="container">
+        <h2>Let's Work Together</h2>
+        <p>
+          If you're looking for a clean and professional website, feel free to
+          reach out.
+        </p>
+
+        <a href="mailto:rabbz05gt@gmail.com" class="btn"> Send Email </a>
+      </div>
     </section>
+
+    <script>
+      const sections = document.querySelectorAll("section");
+
+      window.addEventListener("scroll", () => {
+        const trigger = window.innerHeight * 0.85;
+
+        sections.forEach((section) => {
+          const top = section.getBoundingClientRect().top;
+
+          if (top < trigger) {
+            section.classList.add("show");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
